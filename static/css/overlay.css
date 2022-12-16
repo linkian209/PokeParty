@@ -1,0 +1,65 @@
+body {
+    background-color: transparent;
+}
+
+.poke-slot {
+    clip-path: polygon(35% 0, 100% 0%, 100% 100%, 0 100%, 0 35%);
+    padding: 2px;
+    box-sizing: border-box;
+    background-color: #78F080;
+    width: 100%;
+    height: 100%;
+}
+
+.poke-container {
+    height: 100%;
+    position: relative;
+    clip-path: polygon(35% 0, 100% 0%, 100% 100%, 0 100%, 0 35%);
+    background: linear-gradient(180deg, rgba(0,128,40,1) 0%, rgba(0,128,40,1) 50%, rgba(16,168,64,1) 50%, rgba(16,168,64,1) 55%, rgba(48,216,80,1) 55%, rgba(48,216,80,1) 100%); 
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.row-1 {
+    height: 100%;
+}
+
+.row-2 {
+    height: 50%;
+
+}
+
+.row-3 {
+    height: 33.333%;
+}
+
+.row-6 {
+    height: 16.666%
+}
+
+.col {
+    height: 100%;
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.pokemon {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.item {
+    z-index: 10;
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

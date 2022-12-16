@@ -1,0 +1,51 @@
+body {
+    overflow: hidden;
+}
+
+.btn-twitch {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: white;
+    --bs-btn-bg: #6E35C2;
+    --bs-btn-border-color: #6E35C2;
+    --bs-btn-border-radius: .5rem;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: #612FAB;
+    --bs-btn-hover-border-color: #612FAB;
+    --bs-btn-focus-shadow-rgb: #6E35C2;
+    --bs-btn-active-color: white;
+    --bs-btn-active-bg: #552995;
+    --bs-btn-active-border-color: #552995;
+}
+
+#welcome {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    background: #dadada;
+}
+
+#welcome h1, #welcome a {
+    position: relative;
+    z-index: 10;
+}
+
+#welcome .pokemon {
+    position: absolute;
+    bottom: -10%;
+}
+
+@keyframes animation {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-1200%);
+    }
+}
