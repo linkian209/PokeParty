@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>PokeParty Overlay - {{id}}</title>
-        <link rel="stylesheet" href="{{ url_for('static', path='css/overlay.css') }}">
+        <link rel="stylesheet" href="/static/css/overlay.css">
     </head>
     <body style="width:{{width}}px;height:{{height}}px">
         <div class="container" style="width: 100%; height: 100%">
@@ -16,12 +16,12 @@
                     <div class="poke-slot">
                         <div class="poke-container">
                             {% if col["pokemon"] is not none and col["pokemon"] != "" %}
-                            <object id="pokemon{{ col["index"] }}" class="pokemon" type="image/svg+xml" data="{{ url_for('static', path='/img/pokesprite/pokemon-gen8/regular/' ~ col["pokemon"] ~ '.svg') }}"></object>
+                            <object id="pokemon{{ col["index"] }}" class="pokemon" type="image/svg+xml" data="{{ '/static/img/pokesprite/pokemon-gen8/regular/' ~ col["pokemon"] ~ '.svg' }}"></object>
                             {% else %}
                             <object id="pokemon{{ col["index"] }}" class="pokemon" type="image/svg+xml" data=""></object>
                             {% endif %}
                             {% if col["item"] is not none and col["item"] != "" %}
-                            <object id="item{{ col["index"] }}" class="item" type="image/svg+xml" data="{{ url_for('static', path='/img/pokesprite/items' ~ ('-outline' if outline else '') ~ '/hold-item/' ~ col["item"] ~ '.svg') }}"></object>
+                            <object id="item{{ col["index"] }}" class="item" type="image/svg+xml" data="{{ '/static/img/pokesprite/items' ~ ('-outline' if outline else '') ~ '/hold-item/' ~ col["item"] ~ '.svg' }}"></object>
                             {% else %}
                             <object id="item{{ col["index"] }}" class="item" type="image/svg+xml" data=""></object>
                             {% endif %}
@@ -42,9 +42,9 @@
                     new_value = "";
                 } else {
                     if(update.type == "pokemon") {
-                        new_value = "{{ url_for('static', path='/img/pokesprite/pokemon-gen8/regular/') }}" + update.name + ".svg";
+                        new_value = "/static/img/pokesprite/pokemon-gen8/regular/" + update.name + ".svg";
                     } else if(update.type == "item") {
-                        new_value = "{{ url_for('static', path='/img/pokesprite/items' ~ ('-outline' if outline else '') ~ '/hold-item/') }}" + update.name + ".svg";
+                        new_value = "{{ '/static/img/pokesprite/items' ~ ('-outline' if outline else '') ~ '/hold-item/' }}" + update.name + ".svg";
                     } else {
                         console.error("Unknown message: " + update);
                         return;

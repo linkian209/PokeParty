@@ -3,13 +3,13 @@
 {% block title %}Index{% endblock %}
 
 {% block header %}
-        <link href="{{ url_for('static', path='css/index.css') }}" rel="stylesheet">
+        <link href="/static/css/index.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
         <div id="welcome" class="container-fluid">
             <h1>Welcome to PokeParty!</h1>
-            <a class="btn btn-twitch" role="button" href="{{ url_for('login') }}"><img width="24" src="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 2400 2800' style='enable-background:new 0 0 2400 2800;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%239146FF;%7D%0A%3C/style%3E%3Ctitle%3EAsset 2%3C/title%3E%3Cg%3E%3Cpolygon class='st0' points='2200,1300 1800,1700 1400,1700 1050,2050 1050,1700 600,1700 600,200 2200,200 '/%3E%3Cg%3E%3Cg id='Layer_1-2'%3E%3Cpath class='st1' d='M500,0L0,500v1800h600v500l500-500h400l900-900V0H500z M2200,1300l-400,400h-400l-350,350v-350H600V200h1600 V1300z'/%3E%3Crect x='1700' y='550' class='st1' width='200' height='600'/%3E%3Crect x='1150' y='550' class='st1' width='200' height='600'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A"><span style="margin-left: 4px">Login with Twitch!</span></a>
+            <a class="btn btn-twitch" role="button" href="/auth/login"><img width="24" src="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 2400 2800' style='enable-background:new 0 0 2400 2800;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%239146FF;%7D%0A%3C/style%3E%3Ctitle%3EAsset 2%3C/title%3E%3Cg%3E%3Cpolygon class='st0' points='2200,1300 1800,1700 1400,1700 1050,2050 1050,1700 600,1700 600,200 2200,200 '/%3E%3Cg%3E%3Cg id='Layer_1-2'%3E%3Cpath class='st1' d='M500,0L0,500v1800h600v500l500-500h400l900-900V0H500z M2200,1300l-400,400h-400l-350,350v-350H600V200h1600 V1300z'/%3E%3Crect x='1700' y='550' class='st1' width='200' height='600'/%3E%3Crect x='1150' y='550' class='st1' width='200' height='600'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A"><span style="margin-left: 4px">Login with Twitch!</span></a>
         </div>
-        <script src="{{ url_for('static', path='js/pokebubbles.js') }}"></script>
+        <script src="/static/js/pokebubbles.js"></script>
 {% endblock %}
