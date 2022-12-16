@@ -17,7 +17,7 @@ WHOAMI_API = "https://api.twitch.tv/helix/users"
 
 @router.get("/login")
 async def login(request: Request):
-    twitch = OAuth2Session(settings.client_id, scope=[], redirect_uri=request.url_for("callback"))
+    twitch = OAuth2Session(settings.client_id, scope=[], redirect_uri=settings.callback_url)
     authorization_url, state = twitch.authorization_url(AUTH_URL)
     response = RedirectResponse(authorization_url)
     
@@ -31,7 +31,7 @@ async def login(request: Request):
 @router.get("/callback", dependencies=[Depends(cookie)], response_class=RedirectResponse)
 async def callback(request: Request, session_data: SessionData = Depends(verifier), session_key: UUID = Depends(cookie), db: Session = Depends(database)):
     twitch = OAuth2Session(
-        settings.client_id, state=session_data.oauth_state, redirect_uri=request.url_for("callback")
+        settings.client_id, state=session_data.oauth_state, redirect_uri=settings.callback_url
     )
     token = twitch.fetch_token(
         token_url=TOKEN_URL, include_client_id=True,
